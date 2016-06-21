@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="uiKitApp">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>ENADOC 2.0</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+
+    <link id="mainStyles" rel="stylesheet" href="css/main-light.css">
+    
+    <link id="brandingStyles" rel="stylesheet" href="css/branding/branding-enadoc.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <div id="mainPageLoader" class="container-fluid">
+        <div class="progress progress-striped active col-xs-12">
+                <div class="progress-bar" style="width: 0%;"></div>
+            </div>
+    </div>
+    <div class="navbar navbar-default background-theme text-theme body-content">
+        <div class="container-fluid">
+            
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+                <a class="navbar-brand" href="#">Enadoc 2.0</a>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <!--<li onclick="progressBarStart()"><a>start</a></li>
+                    <li><a>stop</a></li>-->
+                </ul>
+                
+                <ul class="nav navbar-nav navbar-right">
+                    <li theme="light" class="light-theme theme-change"><a><span class="theme-icon glyphicon glyphicon-heart-empty"></span></a></li>
+                    <li theme="dark" class="dark-theme theme-change"><a><span class="theme-icon glyphicon glyphicon-heart-empty"></span></a></li>
+                </ul>
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+    </div>
+
+    <div class="container-fluid body-content">
+
+        <div class="row">
+           <div class="col-sm-2 left-column">
+            <!-- Left column -->
+           
+            <span class="btn btn-primary visible-xs nav-left-toggle"><i class="fa fa-angle-double-right toggle-icon"></i></span>
+            <ul class="nav nav-stacked navbar-default background-theme text-theme">
+                <li><a href="#/typography"><i class="fa fa-text-width left-nav-icon" aria-hidden="true"></i> Typography</a></li>
+                <li><a href="#/buttons"><i class="fa fa-youtube-play left-nav-icon" aria-hidden="true"></i>Buttons</a></li>
+                <li><a href="#/notifications"><i class="fa fa-bell left-nav-icon" aria-hidden="true"></i> Notifications</a></li>
+                <li><a href="#/forms"><i class="fa fa-wpforms left-nav-icon" aria-hidden="true"></i> Forms</a></li>
+                <li><a href="#/tables"><i class="fa fa-table left-nav-icon" aria-hidden="true"></i> Tables</a></li>
+                <li><a href="#/components"><i class="fa fa-compass left-nav-icon" aria-hidden="true"></i> Components</a></li>
+                <li><a href="#/containers"><i class="fa fa-compress left-nav-icon" aria-hidden="true"></i> Containers</a></li>
+                <li><a href="#/colorpalette"><i class="fa fa-paint-brush left-nav-icon" aria-hidden="true"></i> Color Palette</a></li>
+                <li><a href="#/navs"><i class="fa fa-bars left-nav-icon" aria-hidden="true"></i> Navs</a></li>
+                 <li><a href="#/others"><i class="fa fa-universal-access left-nav-icon" aria-hidden="true"></i> Others</a></li>
+                 
+            </ul>
+
+            <div class="col-xs-12 branding-panel">
+                 <div class="background-theme text-theme col-xs-12 branding-container"> 
+                     <div title="enadoc" class="col-xs-3 col-md-2 branding-wrapper"><a><i brand="enadoc" class="branding-circle fa fa-circle" aria-hidden="true"></i></a></div>
+                    <div title="violet" class="col-xs-3 col-md-2 branding-wrapper"><a><i brand="violet" class="branding-circle fa fa-circle" aria-hidden="true"></i></a></div>
+                     <div title="red" class="col-xs-3 col-md-2 branding-wrapper"><a><i brand="red" class="branding-circle fa fa-circle" aria-hidden="true"></i></a></div>
+                    <div title="ocean" class="col-xs-3 col-md-2 branding-wrapper"><a><i brand="ocean" class="branding-circle fa fa-circle" aria-hidden="true"></i></a></div>
+                    <div title="orange" class="col-xs-3 col-md-2 branding-wrapper"><a><i brand="orange" class="branding-circle fa fa-circle" aria-hidden="true"></i></a></div>
+                    <div title="brown" class="col-xs-3 col-md-2 branding-wrapper"><a><i brand="brown" class="branding-circle fa fa-circle" aria-hidden="true"></i></a></div>
+                    <div title="green" class="col-xs-3 col-md-2 branding-wrapper"><a><i brand="green" class="branding-circle fa fa-circle" aria-hidden="true"></i></a></div>
+                    <div title="indigo" class="col-xs-3 col-md-2 branding-wrapper"><a><i brand="indigo" class="branding-circle fa fa-circle" aria-hidden="true"></i></a></div>
+                    <div title="mint" class="col-xs-3 col-md-2 branding-wrapper"><a><i brand="mint" class="branding-circle fa fa-circle" aria-hidden="true"></i></a></div>
+                    <div title="yellow" class="col-xs-3 col-md-2 branding-wrapper"><a><i brand="yellow" class="branding-circle fa fa-circle" aria-hidden="true"></i></a></div>
+                </div>
+            </div>
+           
+
+        </div>
+            <div class="col-xs-12 col-sm-10 right-column">
+              <div id="pageContent" class="col-xs-12" ng-view>
+                
+            </div>
+            </div>
+           
+        </div>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery-2.2.1.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+     <script src="lib/angular/angular.min.js"></script>
+    <script src="lib/angular/angular-route.min.js"></script>
+    <script src="lib/angular/angular-animate.min.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/app.js"></script>
+    
+    
+    <script>
+        
+    $(function(){
+        progressBarStart();
+        var themeColor="dark";
+        var brandingColor="enadoc";
+        
+         var stylePathTheme='css/main-'+themeColor+'.css';
+         var stylePathBranding='css/branding/branding-'+brandingColor+'.css';
+        $('#mainStyles').attr('href',stylePathTheme);
+        $('#brandingStyles').attr('href',stylePathBranding);
+        
+        if(themeColor=="dark"){
+            $('.theme-change').removeClass('active');
+            $('.dark-theme').addClass('active');
+        }else if(themeColor=="light"){
+            $('.theme-change').removeClass('active');
+            $('.light-theme').addClass('active');
+        }
+        
+        $('.branding-circle').click(function (){
+            progressBarStart();
+            $('.body-content').fadeOut(10);
+            var branding=$(this).attr('brand');
+            stylePathBranding='css/branding/branding-'+branding+'.css';
+                $('#brandingStyles').attr('href',stylePathBranding);
+                
+                $('.body-content').fadeIn(1300);
+         });
+             
+             
+             
+          $('.theme-change').click(function (){
+              progressBarStart();
+              $('.body-content').fadeOut(10);
+                  $('.theme-change').removeClass('active');
+                  $(this).addClass('active');
+            var theme=$(this).attr('theme');
+            stylePathTheme='css/main-'+theme+'.css';
+                $('#mainStyles').attr('href',stylePathTheme);
+                
+                 $('.body-content').fadeIn(1300);
+         });
+         
+         $('.left-column').find('.nav>li').click(function(){
+             $('.left-column').find('.nav>li').removeClass('active');
+             $(this).addClass('active');
+         });
+                
+                
+                $('.nav-left-toggle').click(function(){
+                    if($(this).parent('.left-column').hasClass('nav-left-open')){
+                        $(this).find('.toggle-icon').addClass('fa-angle-double-right');
+                        $(this).find('.toggle-icon').removeClass('fa-angle-double-left');
+                    }else{
+                        $(this).find('.toggle-icon').addClass('fa-angle-double-left');
+                        $(this).find('.toggle-icon').removeClass('fa-angle-double-right');
+                    }
+                    $('.left-column').toggleClass('nav-left-open');
+                });
+                
+                $('#pageContent').on('load',function(){
+                    console.log('loaded');
+                });
+                
+    });
+    
+    var progressVal;
+    // function progressBarStart(){
+    //     clearInterval(progressInterval);
+    //     progressVal=0;
+    //     $('#mainPageLoader').find('.progress-bar').css('width', '0%').show();
+    //     var progressInterval =setInterval(function(){
+    //         if(progressVal>90){
+    //             clearInterval(progressInterval);
+    //             //progressBarStop();
+    //         } else{
+    //             progressVal++; 
+    //             $('#mainPageLoader').find('.progress-bar').css('width', progressVal+'%');
+    //             console.log(progressVal);
+    //         }
+            
+    //     }, 100);
+        
+    // }
+    function progressBarStart() {
+        clearInterval(id);
+        var elem = $('#mainPageLoader').find('.progress-bar');
+        var width = 0;
+        var id = setInterval(frame, 50);
+        elem.show();
+        function frame() {
+            if (width == 100) {
+                
+            clearInterval(id);
+            elem.hide().css('width','0%');
+            //console.log('clear');
+            } else {
+            width++;
+            elem.css('width',width+'%').show();
+            //console.log(width);
+            }
+        }
+}
+    
+//  function progressBarStop(){
+//      clearInterval(progressIntervalStop);
+//      var progressIntervalStop =setInterval(function(){
+//             if(progressVal>100){
+//                 clearInterval(progressIntervalStop);
+//                 $('#mainPageLoader').find('.progress-bar').hide().css('width', '0%');
+//                 progressVal=0;
+//             } else{
+//                 progressVal++; 
+//                 $('#mainPageLoader').find('.progress-bar').css('width', progressVal+'%');
+//                 console.log(progressVal);
+//             }
+            
+//         }, 100);
+//  }
+    </script>
+    
+</body>
+
+</html>

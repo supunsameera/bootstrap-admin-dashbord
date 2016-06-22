@@ -79,7 +79,32 @@
                  <li><a href="#/others"><i class="fa fa-universal-access left-nav-icon" aria-hidden="true"></i> Others</a></li>
                  
             </ul>
-
+             <div id="acordianTypeMenu" class="background-theme text-theme acordianTypeMenu">
+                <div class="list-group panel">
+                    <a data-target="#menuItem1" class="list-group-item" data-toggle="collapse" data-parent="#acordianTypeMenu">Acordian Menu1 <i class="fa fa-caret-down"></i></a>
+                    <div class="collapse" id="menuItem1">
+                    <a data-target="#subMenu1" class="list-group-item" data-toggle="collapse" data-parent="#subMenu1">Subitem 1 <i class="fa fa-caret-down"></i></a>
+                        <div class="collapse list-group-submenu" id="subMenu1">
+                            <a data-target="#" class="list-group-item" data-parent="#subMenu1">Subitem 1 a</a>
+                            <a data-target="#" class="list-group-item" data-parent="#subMenu1">Subitem 2 b</a>
+                            <a data-target="#subSubMenu1" class="list-group-item" data-toggle="collapse" data-parent="#subSubMenu1">Subitem 3 c <i class="fa fa-caret-down"></i></a>
+                                <div class="collapse list-group-submenu list-group-submenu-1" id="subSubMenu1">
+                                    <a data-target="#" class="list-group-item" data-parent="#subSubMenu1">Sub sub item 1</a>
+                                    <a data-target="#" class="list-group-item" data-parent="#subSubMenu1">Sub sub item 2</a>
+                                </div>
+                            <a data-target="#" class="list-group-item" data-parent="#subMenu1">Subitem 4 d</a>
+                        </div>
+                        <a data-target="" class="list-group-item">Subitem 2</a>
+                        <a data-target="" class="list-group-item">Subitem 3</a>
+                    </div>
+                    <a data-target="#demo4" class="list-group-item" data-toggle="collapse" data-parent="#acordianTypeMenu">Acordian Menu2 <i class="fa fa-caret-down"></i></a>
+                    <div class="collapse" id="demo4">
+                        <a data-target="" class="list-group-item">Subitem 1</a>
+                        <a data-target="" class="list-group-item">Subitem 2</a>
+                        <a data-target="" class="list-group-item">Subitem 3</a>
+                    </div>
+                </div>
+            </div>
             <div class="col-xs-12 branding-panel">
                  <div class="background-theme text-theme col-xs-12 branding-container"> 
                      <div title="enadoc" class="col-xs-3 col-md-2 branding-wrapper"><a><i brand="enadoc" class="branding-circle fa fa-circle" aria-hidden="true"></i></a></div>
@@ -87,6 +112,7 @@
                      <div title="red" class="col-xs-3 col-md-2 branding-wrapper"><a><i brand="red" class="branding-circle fa fa-circle" aria-hidden="true"></i></a></div>
                     <div title="ocean" class="col-xs-3 col-md-2 branding-wrapper"><a><i brand="ocean" class="branding-circle fa fa-circle" aria-hidden="true"></i></a></div>
                     <div title="orange" class="col-xs-3 col-md-2 branding-wrapper"><a><i brand="orange" class="branding-circle fa fa-circle" aria-hidden="true"></i></a></div>
+                    <!--<div  title=""     class="col-xs-3 col-md-2 branding-wrapper"><a><i brand="transparent" class="branding-circle fa fa-circle" aria-hidden="true"></i></a></div>-->
                     <div title="brown" class="col-xs-3 col-md-2 branding-wrapper"><a><i brand="brown" class="branding-circle fa fa-circle" aria-hidden="true"></i></a></div>
                     <div title="green" class="col-xs-3 col-md-2 branding-wrapper"><a><i brand="green" class="branding-circle fa fa-circle" aria-hidden="true"></i></a></div>
                     <div title="indigo" class="col-xs-3 col-md-2 branding-wrapper"><a><i brand="indigo" class="branding-circle fa fa-circle" aria-hidden="true"></i></a></div>
@@ -186,34 +212,18 @@
                 
     });
     
-    var progressVal;
-    // function progressBarStart(){
-    //     clearInterval(progressInterval);
-    //     progressVal=0;
-    //     $('#mainPageLoader').find('.progress-bar').css('width', '0%').show();
-    //     var progressInterval =setInterval(function(){
-    //         if(progressVal>90){
-    //             clearInterval(progressInterval);
-    //             //progressBarStop();
-    //         } else{
-    //             progressVal++; 
-    //             $('#mainPageLoader').find('.progress-bar').css('width', progressVal+'%');
-    //             console.log(progressVal);
-    //         }
-            
-    //     }, 100);
-        
-    // }
+
+
     function progressBarStart() {
-        clearInterval(id);
+        clearInterval(progressStartInterval);
         var elem = $('#mainPageLoader').find('.progress-bar');
         var width = 0;
-        var id = setInterval(frame, 50);
+        var progressStartInterval = setInterval(frame, 50);
         elem.show();
         function frame() {
             if (width == 100) {
                 
-            clearInterval(id);
+            clearInterval(progressStartInterval);
             elem.hide().css('width','0%');
             //console.log('clear');
             } else {
@@ -224,21 +234,27 @@
         }
 }
     
-//  function progressBarStop(){
-//      clearInterval(progressIntervalStop);
-//      var progressIntervalStop =setInterval(function(){
-//             if(progressVal>100){
-//                 clearInterval(progressIntervalStop);
-//                 $('#mainPageLoader').find('.progress-bar').hide().css('width', '0%');
-//                 progressVal=0;
-//             } else{
-//                 progressVal++; 
-//                 $('#mainPageLoader').find('.progress-bar').css('width', progressVal+'%');
-//                 console.log(progressVal);
-//             }
-            
-//         }, 100);
-//  }
+    
+        function progressBarStop() {
+        clearInterval(progressStopInterval);
+        var elem = $('#mainPageLoader').find('.progress-bar');
+        var width = 0;
+        var progressStopInterval = setInterval(frame, 50);
+        elem.show();
+        function frame() {
+            if (width == 100) {
+                
+            clearInterval(progressStopInterval);
+            elem.hide().css('width','0%');
+            //console.log('clear');
+            } else {
+            width++;
+            elem.css('width',width+'%').show();
+            //console.log(width);
+            }
+        }
+}
+
     </script>
     
 </body>
